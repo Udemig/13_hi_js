@@ -17,4 +17,6 @@ document.write("Javascript dersinden selamlar");
 
 console.log("Hello World");
 
-// 3-) alert():
+// 3-) alert(): Tarayıcıda açılır bir popup ile kullanıcıya uyarı vermek için kullanılır.
+
+alert("Dikkat.Bu işlem için yetkiniz yok.");
