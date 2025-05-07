@@ -1,0 +1,78 @@
+.yazı-1 {
+  background-color: red;
+  font-size: 50px;
+}
+
+.new-title {
+  text-align: center;
+  font-size: 60px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: aqua;
+  padding: 20px 30px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border: 1px solid gray;
+  padding: 20px;
+}
+form input {
+  padding: 8px 12px;
+  border-radius: 4px;
+  border: 1px solid gray;
+}
+form button {
+  font-size: 15px;
+  font-weight: 400;
+  padding: 4px 8px;
+  border: 1px solid gray;
+  border-radius: 4px;
+  background-color: cornflowerblue;
+  color: white;
+}
+
+#create-btn {
+  border: none;
+  outline: none;
+  padding: 8px 14px;
+  margin: 50px 0;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 10px;
+  background-color: green;
+  color: white;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+#create-btn:hover {
+  scale: 0.9;
+  box-shadow: 5px 5px 10px rgba(0, 128, 0, 0.619);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: wheat;
+  padding: 30px;
+}
+.container .new-child {
+  font-size: 20px;
+  font-weight: bold;
+  background-color: aqua;
+  text-align: center;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+.dark {
+  background-color: black;
+  color: white;
+}
+
+.dark-thema {
+  background-color: black;
+  color: white;
+}
