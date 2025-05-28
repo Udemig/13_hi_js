@@ -1,4 +1,9 @@
-import { getFromLocalStorage, saveToLocalStorage } from "./helper.js";
+import {
+  getFromLocalStorage,
+  renderCartTotal,
+  saveToLocalStorage,
+  updateCartIcon,
+} from "./helper.js";
 import { renderCartItems } from "./ui.js";
 
 // localStorage'dan cart elemanlarını al
@@ -43,6 +48,9 @@ const addToCart = (e, products) => {
   setTimeout(() => {
     e.target.textContent = "Add to cart";
   }, 2000);
+
+  // Sepet ikonunu güncelle
+  updateCartIcon(cart);
 };
 
 // Sepetten ürün kaldıran fonksiyon
@@ -63,6 +71,12 @@ const removeFromCart = (e) => {
 
     // Arayüzü renderla
     renderCartItems(cart);
+
+    // Sepet ikonunu güncelle
+    updateCartIcon(cart);
+
+    // Toplam fiyatı renderla
+    renderCartTotal(cart);
   }
 };
 
@@ -86,6 +100,12 @@ const onQuantityChange = (e) => {
   } else {
     removeFromCart(e);
   }
+
+  // Sepet ikonunu güncelle
+  updateCartIcon(cart);
+
+  // Toplam fiyatı renderla
+  renderCartTotal(cart);
 };
 
 export { addToCart, removeFromCart, onQuantityChange };

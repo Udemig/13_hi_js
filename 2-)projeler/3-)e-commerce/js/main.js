@@ -1,6 +1,10 @@
 import fetchProducts from "./api.js";
 import { addToCart } from "./cart.js";
-import { getFromLocalStorage } from "./helper.js";
+import {
+  getFromLocalStorage,
+  renderCartTotal,
+  updateCartIcon,
+} from "./helper.js";
 import { renderCartItems, renderProducts, uiElements } from "./ui.js";
 
 uiElements.menuIcon.addEventListener("click", () => {
@@ -15,6 +19,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // Hangi sayfadayız ?
   if (window.location.pathname.includes("/cart.html")) {
     renderCartItems(cart);
+
+    renderCartTotal(cart);
   } else {
     fetchProducts().then((products) => {
       renderProducts(products, (e) => {
@@ -22,4 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   }
+
+  // Sepet ikonunu güncelle
+  updateCartIcon(cart);
 });
