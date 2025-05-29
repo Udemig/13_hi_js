@@ -105,6 +105,10 @@ main {
             border-radius: 50%;
             font-size: 23px;
             transition: all 0.3s;
+            i {
+              // Bu elemanın imleç olaylarını kapat
+              pointer-events: none;
+            }
             &:hover {
               rotate: 360deg;
               scale: 1.1;

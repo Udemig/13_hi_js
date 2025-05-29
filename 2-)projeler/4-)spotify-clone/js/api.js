@@ -27,10 +27,31 @@ class API {
       return data.tracks.hits.map((item) => item.track);
     } catch (error) {
       alert(`Hata: ${error}`);
+
+      return [];
     }
   }
 
   // Aratılan müzikleri alan fonksiyon
+  async getSearchMusic(query) {
+    try {
+      // Api'a istek at
+      const response = await fetch(
+        `${this.baseURL}/search?term=${query}`,
+        this.options
+      );
+
+      // Api'dan gelen veriyi js nesnesine çevir
+      const songs = await response.json();
+
+      // Api'dan gelen veriyi fonksiyon çağırıldığında geri dönder
+      return songs.tracks.hits.map((item) => item.track);
+    } catch (error) {
+      alert(`Hata: ${error}`);
+
+      return [];
+    }
+  }
 }
 
 export default API;
