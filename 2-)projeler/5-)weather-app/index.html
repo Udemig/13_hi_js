@@ -30,7 +30,21 @@
         </div>
 
         <form>
-          <input type="search" placeholder="Şehir adı giriniz ..." />
+          <!-- Input -->
+          <input
+            type="search"
+            placeholder="Şehir adı giriniz ..."
+            list="city-list"
+          />
+          <datalist id="city-list">
+            <!-- <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option> -->
+
+            <!-- ! Bu kısım js ile dinamik şekilde doldurulacak -->
+          </datalist>
+          <!-- Button -->
           <button type="submit" id="search-btn">
             <i class="fa-solid fa-magnifying-glass"></i>
           </button>
@@ -106,8 +120,14 @@
       </div>
 
       <!-- * Error Container -->
+      <div class="error-message" id="error-message">
+        <p>Şehir bulunamadı. Lütfen geçerli bir şehir adı girin.</p>
+      </div>
 
       <!-- * Loader Container -->
+      <div class="loader-container" id="loader">
+        <div class="loader"></div>
+      </div>
     </section>
     <!-- * Js Connection -->
     <script src="./js/main.js" type="module"></script>
